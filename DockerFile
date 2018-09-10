@@ -1,0 +1,16 @@
+#Download base Ubuntu base image
+FROM centos
+
+#Run software update
+RUN yum -y update
+
+#install tree command in centos
+RUN yum -y install tree
+
+#Copy shell script
+COPY print.sh /print.sh
+
+#run command
+ENTRYPOINT /print.sh
+
+
